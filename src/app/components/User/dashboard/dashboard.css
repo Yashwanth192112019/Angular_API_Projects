@@ -1,0 +1,58 @@
+/* Section titles with underline */
+.section-title {
+  font-weight: bold;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+  color: #343a40;
+}
+
+/* Media Cards (songs/videos) */
+.media-card {
+  border-radius: 15px;
+  background: #f8f9fa;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Playlist cards */
+.playlist-card {
+  border-radius: 15px;
+  background: #e9f7ff;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect */
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* List group inside playlist */
+.list-group-item {
+  border: 0;
+  border-bottom: 1px dashed #007bff;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Navbar adjustments */
+.navbar {
+  border-bottom: 3px solid #ffc107;
+}
+
+/* Buttons */
+.btn-warning {
+  font-weight: bold;
+}
+
+.btn-danger {
+  font-weight: bold;
+}
+
+/* Audio/video spacing */
+audio, video {
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
