@@ -1,0 +1,131 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #000000, #7b4397);
+  padding: 1rem 2rem;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #ffe082;
+  transform: scale(1.1);
+}
+
+/* Upload container */
+.upload-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: #fdfdfd;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.upload-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Form styling */
+.upload-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.upload-form label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.upload-form input,
+.upload-form select {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.upload-form input:focus,
+.upload-form select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 6px rgba(74,144,226,0.4);
+  outline: none;
+}
+
+/* Upload button */
+.upload-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(90deg, #2b2727, #9f9f9f);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.upload-btn:hover {
+  background: linear-gradient(90deg, #185a9d, #43cea2);
+  transform: scale(1.05);
+}
+
+/* Upload message */
+.upload-message {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.animate-fade {
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .upload-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}

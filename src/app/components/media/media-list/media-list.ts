@@ -15,14 +15,20 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./media-list.css']
 })
 export class MediaListComponent implements OnInit {
-  @Input() mediaType!: string; // "song" or "video"
+  @Input() mediaType!: string; // "Music" or "Video"
   media: Media[] = [];
+  filteredMedia: Media[] = [];
 
   constructor(private mediaService: MediaService) {}
 
   ngOnInit(): void {
     this.mediaService.getAllMedia().subscribe(data => {
       this.media = data;
+
+      // filter based on @Input
+      this.filteredMedia = this.media.filter(m => m.mediaType === this.mediaType);
     });
   }
 }
+
+

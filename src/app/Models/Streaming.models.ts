@@ -23,7 +23,7 @@ export interface Media {
   url: string;
   durationInMinutes : number;
   genre: string;
-  releaseDate : Date;
+  releaseDate : string;
   playListMedias : Playlist[];
 }
 

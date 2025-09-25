@@ -1,1 +1,63 @@
-<p>playlist-detail works!</p>
+
+
+<div class="container mt-4 playlist-container" [hidden]="!playlist">
+  <h2 class="playlist-title">{{ playlist?.name }}</h2>
+  <p class="playlist-count">Total Media: {{ playlist?.playlistMedias?.length }}</p>
+
+  <div class="list-group fancy-list">
+    <div
+      class="list-group-item d-flex justify-content-between align-items-center fancy-item"
+      *ngFor="let pm of playlist?.playlistMedias"
+    >
+      <div>
+        <strong class="media-title">{{ pm.media.title }}</strong>
+        <span class="badge bg-gradient ms-2">{{ pm.media.mediaType }}</span>
+      </div>
+
+      <button
+        class="btn btn-sm btn-outline-light fancy-play-btn"
+        (click)="openPlayer(pm.media)"
+      >
+        ▶ Play
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- 🎵 Modal Player -->
+<div
+  class="modal fade show d-block player-backdrop"
+  tabindex="-1"
+  *ngIf="currentMedia"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content player-modal">
+      <div class="modal-header border-0">
+        <h5 class="modal-title glowing-text">Now Playing</h5>
+        <button type="button" class="btn-close btn-close-white" (click)="closePlayer()"></button>
+      </div>
+      <div class="modal-body text-center">
+        <h4 class="media-heading">{{ currentMedia.title }}</h4>
+        <p class="media-sub">{{ currentMedia.genre }}</p>
+
+        <!-- Audio -->
+        <div *ngIf="isAudio(currentMedia.mediaType)">
+          <i class="bi bi-music-note-beamed media-icon"></i>
+          <audio controls autoplay class="w-100 mt-3 custom-player">
+            <source [src]="currentMedia.url" type="audio/mpeg" />
+          </audio>
+        </div>
+
+        <!-- Video -->
+        <div *ngIf="isVideo(currentMedia.mediaType)">
+          <video controls autoplay class="w-100 rounded shadow-lg custom-player">
+            <source [src]="currentMedia.url" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-danger w-100" (click)="closePlayer()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

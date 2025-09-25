@@ -1,0 +1,102 @@
+/* Playlist Section */
+
+
+.playlist-container {
+  background: linear-gradient(135deg, #121212, #1e1e1e);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.playlist-title {
+  font-size: 2rem;
+  color: #1db954;
+  text-shadow: 0px 0px 6px rgba(29, 185, 84, 0.8);
+}
+
+.playlist-count {
+  color: #aaa;
+  font-style: italic;
+}
+
+.fancy-list {
+  margin-top: 1rem;
+}
+
+.fancy-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s, background 0.3s;
+  color: #eee;
+}
+
+.fancy-item:hover {
+  transform: translateY(-4px);
+  background: rgba(29, 185, 84, 0.1);
+}
+
+.media-title {
+  font-weight: 600;
+  color: #fff;
+}
+
+.badge {
+  background: linear-gradient(45deg, #1db954, #1ed760);
+  color: #783b3b;
+  font-weight: bold;
+}
+
+/* Play Button */
+.fancy-play-btn {
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.fancy-play-btn:hover {
+  background: #1db954;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #1db954;
+}
+
+/* Modal Overlay */
+.player-backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+/* Modal Style */
+.player-modal {
+  background: rgba(30, 30, 30, 0.95);
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.9);
+}
+
+/* Modal Content */
+.glowing-text {
+  color: #1db954;
+  text-shadow: 0px 0px 10px rgba(29, 185, 84, 0.8);
+}
+
+.media-heading {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.media-sub {
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.media-icon {
+  font-size: 5rem;
+  color: #1db954;
+  text-shadow: 0 0 15px rgba(29, 185, 84, 0.9);
+}
+
+.custom-player {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.5);
+}

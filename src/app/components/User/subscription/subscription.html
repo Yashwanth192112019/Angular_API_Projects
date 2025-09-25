@@ -1,18 +1,30 @@
+<div class="container mt-5 subscription-dashboard">
+  <h2 class="text-center mb-4 text-gradient">✨ Choose Your Subscription Plan ✨</h2>
+  
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let plan of plans">
+      <div class="card h-100 subscription-card shadow-lg border-0">
+        <div class="card-body text-center d-flex flex-column">
+          <h5 class="card-title fw-bold">{{ plan.planName }}</h5>
+          <p class="price-tag">${{ plan.price }}</p>
 
-<div class="container mt-4">
-  <h2>Choose Your Subscription Plan</h2>
-  <div class="row mt-3">
-    <div class="col-md-4 mb-3" *ngFor="let plan of plans">
-      <div class="card h-100 border-primary">
-        <div class="card-body">
-          <h5 class="card-title">{{ plan.planName }}</h5>
-          <p class="card-text">Price: ${{ plan.price }}</p>
-          <p class="card-text">Max Devices: {{ plan.maxDevices }}</p>
-          <p class="card-text">Download Allowed: {{ plan.isDownloadAllowed ? 'Yes' : 'No' }}</p>
-          <button class="btn btn-success w-100" (click)="subscribe(plan.subscriptionPlanId)">Subscribe</button>
+          <ul class="list-unstyled features mt-3 flex-grow-1">
+            <li><i class="bi bi-display"></i> Max Devices: <strong>{{ plan.maxDevices }}</strong></li>
+            <li><i class="bi bi-download"></i> Download: 
+              <span [ngClass]="plan.isDownloadAllowed ? 'text-success' : 'text-danger'">
+                {{ plan.isDownloadAllowed ? 'Allowed' : 'Not Allowed' }}
+              </span>
+            </li>
+          </ul>
+
+          <button class="btn subscribe-btn mt-3 w-100" 
+                  (click)="subscribe(plan.subscriptionPlanId)">
+            Subscribe 👍
+          </button>
         </div>
       </div>
     </div>
   </div>
-  <p class="mt-3 text-success">{{ message }}</p>
+
+  <p class="mt-4 text-center text-success fw-bold fs-5">{{ message }}</p>
 </div>

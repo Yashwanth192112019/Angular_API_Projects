@@ -1,0 +1,54 @@
+/* Smooth dark theme */
+.subscription-dashboard {
+  background: linear-gradient(135deg, #d2c7c7, #1a1a1a);
+  padding: 40px;
+  border-radius: 20px;
+  color: #3e3e3e;
+}
+
+/* Gradient heading */
+.text-gradient {
+  background: linear-gradient(90deg, #000000, #000000, #969696);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subscription cards */
+.subscription-card {
+  background: #e0d5d5;
+  border-radius: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.subscription-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  border: 1px solid #1db954;
+}
+
+/* Fancy glowing price tag */
+.price-tag {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1db954;
+  margin: 15px 0;
+  text-shadow: 0 0 10px rgba(29,185,84,0.7);
+}
+
+/* Features list */
+.features li {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: #000000;
+}
+.features i {
+  color: #1db954;
+  margin-right: 6px;
+}
+
+/* Subscribe button */
+.subscribe-btn {
+  background: linear-gradient(90deg, #5b9f7d, #103e1d);
+  border: none;
+}

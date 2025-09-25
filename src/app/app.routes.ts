@@ -5,9 +5,12 @@ import { RegisterComponent } from './components/Auth/register/register';
 import { DashboardComponent } from './components/User/dashboard/dashboard';
 import { AuthGuard } from './Guards/auth-guard';
 import { RoleGuard } from './Guards/role-guard';
-import { UploadMedia } from './components/media/upload-media/upload-media';
+import { UploadMediaComponent } from './components/media/upload-media/upload-media';
 import { AdminDashboard } from './components/admin/admin-dashboard/admin-dashboard';
 import { SubscriptionComponent } from './components/User/subscription/subscription';
+import { PlaylistDetailComponent } from './components/playlist/playlist-detail/playlist-detail';
+import { PlaylistCreateComponent } from './components/playlist/playlist-create/playlist-create';
+import { PlaylistListComponent } from './components/playlist/playlist-list/playlist-list';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'auth/login', pathMatch: 'full' }, // 👈 Default route
@@ -19,7 +22,7 @@ export const routes: Routes = [
     path: 'user/dashboard',
     component: DashboardComponent,
     canActivate: [AuthGuard, RoleGuard],
-    data: { roles: ['Subscriber'] }
+    data: { roles: ['Subscriber', 'Creator'] }
   },
   {
     path: 'user/subscription',
@@ -28,11 +31,17 @@ export const routes: Routes = [
     data: { roles: ['Subscriber'] }
   },
 
+    { path: 'playlists/:id', component: PlaylistDetailComponent },
+    { path: 'playlists', component: PlaylistListComponent },
+    { path: 'playlist-create', component: PlaylistCreateComponent, canActivate: [AuthGuard, RoleGuard],
+    data: { roles: ['Creator'] }},
+
+
   // Creator
   {
-    path: 'creator/upload',
-    component: UploadMedia,
-    canActivate: [RoleGuard],
+    path: 'upload-media',
+    component: UploadMediaComponent,
+    canActivate: [RoleGuard, AuthGuard],
     data: { roles: ['Creator'] }
   },
 

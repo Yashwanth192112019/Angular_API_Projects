@@ -1,21 +1,20 @@
-<p>media-list works!</p>
-<!-- media-list.component.html -->
 <div class="row mb-4">
-  <div class="col-md-3 mb-3" *ngFor="let item of media">
-    <div class="card media-card h-100 hover-card">
-      <div class="card-body">
-        <h5 class="card-title">{{ item.title }}</h5>
-        <p class="card-text">Genre: {{ item.genre }}</p>
-        <p class="card-text">Duration: {{ item.durationInMinutes }} mins</p>
+  @for (item of filteredMedia; track item.mediaId) {
+    <div class="col-md-3 mb-3">
+      <div class="card media-card h-100 hover-card">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.title }}</h5>
+          <p class="card-text">Genre: {{ item.genre }}</p>
+          <p class="card-text">Duration: {{ item.durationInMinutes }} mins</p>
 
-        <!-- Conditional rendering -->
-        <ng-container *ngIf="item.mediaType === 'song'">
-          <audio controls [src]="item.url" class="w-100 mt-2"></audio>
-        </ng-container>
-        <ng-container *ngIf="item.mediaType === 'video'">
-          <video controls [src]="item.url" class="w-100 mt-2"></video>
-        </ng-container>
+          @if (item.mediaType === 'Music') {
+            <audio controls [src]="item.url" class="w-100 mt-2"></audio>
+          }
+          @if (item.mediaType === 'Video') {
+            <video controls [src]="item.url" class="w-100 mt-2"></video>
+          }
+        </div>
       </div>
     </div>
-  </div>
+  }
 </div>

@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-media-detail',
   imports: [],
   templateUrl: './media-detail.html',
-  styleUrl: './media-detail.scss'
+  styleUrl: './media-detail.css'
 })
 export class MediaDetail {
 

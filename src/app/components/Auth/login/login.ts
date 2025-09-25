@@ -33,8 +33,8 @@ export class LoginComponent {
               .then(ok => console.log('Router nav result:', ok));
           }
           else if (role === 'Creator') {
-            console.log('Navigating to /creator/upload');
-            this.router.navigate(['/creator/upload']);
+            console.log('Navigating to /upload-media');
+            this.router.navigate(['/upload-media']);
           }
           else if (role === 'Admin') {
             console.log('Navigating to /admin');

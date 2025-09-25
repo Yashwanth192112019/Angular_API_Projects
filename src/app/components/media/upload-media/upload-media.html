@@ -1,1 +1,84 @@
-<p>upload-media works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">🎵 MyMedia</a>
+
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/upload-media">Upload Media</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="getplaylists()">Playlists</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" (click)="gotoDashboard()">Uploads</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/profile">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="upload-container">
+  <h2 class="title">Upload Your Media</h2>
+
+  <form (ngSubmit)="onSubmit()" #uploadForm="ngForm" class="upload-form">
+
+    <!-- Title -->
+    <div class="form-group">
+      <label>Title:</label>
+      <input type="text" name="title" [(ngModel)]="media.title" required />
+    </div>
+
+    <!-- Genre -->
+    <div class="form-group">
+      <label>Genre:</label>
+      <input type="text" name="genre" [(ngModel)]="media.genre" />
+    </div>
+
+    <!-- File upload -->
+    <div class="form-group file-input">
+      <label>Select File:</label>
+      <input #fileInput type="file" (change)="onFileSelected($event)" required />
+      <button *ngIf="isFileChosen" type="button" class="remove-btn" (click)="removeFile(fileInput)">
+        ❌ Remove
+      </button>
+    </div>
+
+
+    <!-- Media type (auto-filled, disabled) -->
+    <div class="form-group">
+      <label>Media Type:</label>
+      <input type="text" name="mediaType" [(ngModel)]="media.mediaType" [disabled]="true" />
+    </div>
+
+    <!-- Duration (auto-filled, disabled) -->
+    <div class="form-group">
+      <label>Duration (minutes):</label>
+      <input type="number" name="durationInMinutes" [(ngModel)]="media.durationInMinutes" [disabled]="true" />
+    </div>
+
+    <!-- Release date (auto-filled, disabled) -->
+    <div class="form-group">
+      <label>Release Date:</label>
+      <input type="date" name="releaseDate" [(ngModel)]="media.releaseDate" required />
+    </div>
+
+
+
+    <!-- Submit -->
+    <button type="submit" [disabled]="!uploadForm.form.valid || !isFileChosen" class="upload-btn" (click)="gotoDashboard()">
+      Upload
+    </button>
+  </form>
+
+  <p *ngIf="uploadMessage" class="upload-message animate-fade">
+    {{ uploadMessage }}
+  </p>
+</div>

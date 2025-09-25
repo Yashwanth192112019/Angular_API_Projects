@@ -8,11 +8,13 @@ import { MediaService } from '../../../services/media.service';
 import { PlaylistService } from '../../../services/playlist.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MediaListComponent } from "../../media/media-list/media-list";
+import { PlaylistListComponent } from "../../playlist/playlist-list/playlist-list";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, MediaListComponent, PlaylistListComponent],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.css']
 })

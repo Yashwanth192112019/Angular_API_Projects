@@ -1,1 +1,14 @@
-<p>playlist-list works!</p>
+<!-- playlist-list.component.html -->
+<div class="row">
+  <div class="col-md-3 mb-3" *ngFor="let playlist of playlists">
+    <div class="card playlist-card h-100 hover-card border-primary border-2"
+         (click)="goToDetail(playlist.playlistId)" style="cursor: pointer;">
+      <div class="card-body">
+        <h5 class="card-title">{{ playlist.name }}</h5>
+        <p class="card-text">Total Media: {{ playlist.playlistMedias.length }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+

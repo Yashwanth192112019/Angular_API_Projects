@@ -1,0 +1,255 @@
+/* =======================
+   General Body & Fonts
+======================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* =======================
+   Navbar Styling
+======================= */
+.navbar {
+    background-color: #1a1a2e;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar-links a:hover {
+    background-color: #162447;
+    color: #ffcc00;
+}
+
+/* =======================
+   Container Layout
+======================= */
+.container {
+    padding: 20px;
+}
+
+/* =======================
+   Forms Styling
+======================= */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+    margin-bottom: 15px;
+    color: #1a1a2e;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"], input[type="number"], input[type="date"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus, select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    outline: none;
+}
+
+/* =======================
+   Buttons Styling
+======================= */
+button, .btn {
+    padding: 10px 18px;
+    background-color: #4a90e2;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #357ABD;
+    transform: translateY(-2px);
+}
+
+/* =======================
+   Upload Container Styling
+======================= */
+.upload-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.upload-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* =======================
+   Playlist Section Styling
+======================= */
+.playlist-create-container {
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.playlist-create-container h2 {
+    margin-bottom: 15px;
+    color: #1a1a2e;
+}
+
+.playlist-create-container hr {
+    margin: 20px 0;
+}
+
+.media-checkbox {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.media-checkbox:hover {
+    background: rgba(74, 144, 226, 0.1);
+}
+
+/* =======================
+   Playlist List Styling
+======================= */
+.playlist-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.playlist-list li {
+    list-style: none;
+    background: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.playlist-list li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.playlist-list a {
+    text-decoration: none;
+    color: #1a1a2e;
+    font-weight: bold;
+}
+
+.playlist-list a:hover {
+    color: #4a90e2;
+}
+
+/* =======================
+   Playlist Detail Styling
+======================= */
+.playlist-detail {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.playlist-detail h2 {
+    margin-bottom: 15px;
+    color: #1a1a2e;
+}
+
+.playlist-detail ul {
+    list-style: none;
+    padding: 0;
+}
+
+.playlist-detail li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s ease;
+}
+
+.playlist-detail li:hover {
+    background: rgba(74, 144, 226, 0.05);
+}
+
+.playlist-detail button {
+    background-color: #4a90e2;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+    }
+
+    .navbar-links li {
+        margin: 8px 0;
+    }
+
+    form {
+        padding: 15px;
+    }
+}

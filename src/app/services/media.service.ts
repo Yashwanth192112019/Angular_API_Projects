@@ -18,7 +18,18 @@ export class MediaService {
         url: `https://localhost:7192${m.url}` // prepend backend URL
       })))
     );
+  }
 
+  uploadMedia(media: Media, file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file);  // this is for the actual media file
+    formData.append('title', media.title);
+    formData.append('mediaType', media.mediaType);
+    formData.append('durationInMinutes', media.durationInMinutes.toString());
+    formData.append('genre', media.genre);
+    formData.append('releaseDate', media.releaseDate.toString());
+
+    return this.http.post(`${this.apiUrl}/Media/upload`, formData);
   }
   
 }
